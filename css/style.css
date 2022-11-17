@@ -2,88 +2,103 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --main-color: #020E35;
+}
 
 body {
     overflow-x: hidden;
-    background-color: #020E35;
+    background:var(--main-color);
     font-family: 'Basic';
 
 }
-.banner {
-    background-color: #fff;
+.color-switcher {
+    position: fixed;
+    top: 25px;
+    right: -220px;
+    width: 200px;
+    z-index: 1000;
 }
-
-.banner .banner-title h1 {
-    font-size: 70px;
-    font-weight: 700;
-    font-family: 'Basic';
-    margin-left: 100px;
-    margin-top: 100px;
-    line-height: 122px;
+.color-switcher.active {
+    right: 0;
 }
-
-.banner .banner-title .btn-banner {
-    width: 140px;
-    height: 40px;
-    background: linear-gradient(270deg, #8C32F0 0%, #E73587 100%);
-    margin-left: 100px;
-    text-align: center;
+.color-switcher h3{
+    color: #acacac;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #020E35;
+    padding: 5px 0;
+    text-align: center; 
 }
-
-.btn-banner a {
+.color-switcher .switcher-btn{
+    position: absolute;
+    top: 0;
+    left: -75px;
+    color: #020E35;
+    background: var(--main-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.color-switcher .switcher-btn i {
+    animation:rotate 2s linear infinite;
     color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 400;
-
-
 }
-
-.banner-img {
-    margin-top: 30px;
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }   
+}
+.color-switcher .theme-buttons-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.color-switcher .theme-buttons-container .theme-buttons{
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #fff;
 }
 
 .aboutus {
-    height: 1150px;
+    height: 1080px;
     background-color: #fff;
 }
-
-.info-panel h4 {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 5px;
+.aboutus .img-banner {
+    background-color: var(--main-color);
+    border-radius: 25px;
+   
 }
-
-.info-panel p {
-    font-size: 14px;
-    color: #acacac;
-    margin-top: -5px;
-    font-weight: 200;
+.aboutus .img-banner .img-fluid{
+    padding-top: 30px;
+}
+.aboutus h1 {
+    color: var(--main-color);
 }
 .homespace {
     margin-top: 30px;
     text-align: center;
     margin-bottom: 30px;
 }
-
 .homespace img {
     width: 600px;
     height: 300px;
 }
-
 .homespace h3 {
     font-size: 52px;
     font-weight: 200;
     text-transform: uppercase;
     margin-top: 30px;
 }
-
 .homespace h3 span {
     font-weight: 500;
-    color: #9232E9;
+    color: var(--main-color);
 }
-
 .homespace p {
     font-size: 18px;
     color: #acacac;
@@ -102,112 +117,91 @@ body {
     font-weight: 400;
     font-weight: 400;
 }
-
-.portfolio {
-    margin-left: 70px;
+.portfolio .title hr {
+    width: 100px;
+    height: 3px;
+    color: #E73587;
+    margin: auto;
+    margin-bottom: 30px;
+    
 }
-
-.portfolio .card {
-    height: 600px;
+.portfolio .owl-carousel .item {
+   width: 367px !important;
+   padding-left: 15px !important;
+   border: none;
+   margin: auto;
 }
-
-.portfolio h1 {
-    font-size: 40px;
-    font-family: 'Basic';
+.card .card-title{
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+.card .card-text{
     font-weight: 400;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-
 }
-
-.portfolio .btn-port,
-.our-work .btn-port {
+.portfolio .card-body a,
+.btn-port{
     width: 140px;
     height: 40px;
     background: linear-gradient(270deg, #8C32F0 0%, #E73587 100%);
     border: none;
     color: #fff;
 }
-
+.btn-port:hover {
+    background: linear-gradient( var(--main-color) 10%, #4C6793 100%);
+    border: 2px solid var(--main-color);
+}
 .owl-carousel .owl-next,
 .owl-carousel .owl-prev {
     background: linear-gradient(270deg, #8C32F0 0%, #E73587 100%) !important;
-    margin-right: 30px;
+   
     color: #fff !important;
     width: 76px !important;
     height: 76px !important;
     border-radius: 50px !important;
     font-size: 30px !important;
-
 }
-
 .owl-carousel .owl-next {
     position: absolute;
-    right: -20px;
+    right: 10px;
     bottom: 270px !important;
 }
-
 .owl-carousel .owl-prev {
     position: absolute;
-    left: -20px;
+    left: 10px;
     bottom: 270px !important;
 }
-
-
-.our-work .img-work {
-    width: 540px;
-    height: 390px;
-    background-color: #8C32F0;
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 60px;
-}
-
-.our-work {
-    margin: 0;
-    padding: 0;
-}
-
 .our-work h1 {
     font-size: 40px;
     font-weight: 400;
     color: #fff;
     margin-top: 100px;
-
 }
-
 .our-work .des-work h3 {
     color: #fff;
     font-size: 30px;
     font-family: 'Basic';
     font-weight: 400;
-
 }
-
 .our-work .des-work span {
     color: #fff;
     font-size: 15px;
     font-weight: 400;
     margin-top: 16px;
 }
-
 .our-work .des-work p {
     color: #fff;
     font-size: 16px;
     font-weight: 400;
     margin-top: 49px;
 }
-
 .our-work .des-work2 {
     text-align: right;
     padding-right: 30px;
 }
-
 .our-work .row {
     display: none;
 }
-
 .our-work .row:nth-child(1),
 .our-work .row:nth-child(2),
 .our-work .row:nth-child(3),
@@ -215,7 +209,16 @@ body {
 .our-work .row:nth-child(5) {
     display: flex;
 }
-@media only screen and (max-width: 780px) {
+.our-work .container .our-title hr{
+    width: 100px;
+    height: 3px;
+    color:#fa66ab;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+
+@media only screen and (max-width: 700px) {
     .navbar .nav-item .nav-link {
         margin-left: 50%;
 
@@ -227,28 +230,15 @@ body {
     * {
         margin: 0%;
     }
-
-    .banner .banner-title h1 {
-        font-size: 40px;
-        line-height: 50px;
-        padding-left: 30px;
-    }
-
-    .banner .btn-banner {
-        margin-top: 20px;
-        margin-left: 40px;
-    }
-
-    .aboutus .card {
-        height: 600px;
-        width: 300px !important;
-        margin-left: 15px;
-    }
     .aboutus h1 {
         font-size: 30px;
     }
     .portfolio h1 {
         font-size: 30px;
+    }
+    .portfolio .item {
+        width: 250px !important;
+        margin: auto;
     }
     .owl-carousel .owl-next,
     .owl-carousel .owl-prev {
@@ -262,11 +252,10 @@ body {
     }
 }
 
-@media screen and (max-width: 700px) {
-    .aboutus .card {
-        height: 580px;
-        width: 200px;
-       margin-left:0px !important;
+@media only screen and (max-width: 701px) {
+    .portfolio .owl-carousel .item  {
+        width: 300px !important;
+        margin-left: 30px !important;
     }
     .owl-carousel .owl-next,
     .owl-carousel .owl-prev {
@@ -279,12 +268,33 @@ body {
     
     }
 }
-@media screen and (max-width:900px) {
-    .aboutus .card {
-        height: 600px;
-        width: 350px !important;
-        margin-left: -10px !important;
+@media only screen and (max-width: 530px) {
+    .aboutus h3{
+        font-size: 15px;
     }
+    .aboutus p {
+        font-size: 12px;
+    }
+    .aboutus .img-banner {
+        width: 400px;
+        margin-left: 35px;
+    }
+    .portfolio .owl-carousel .item  {
+        width: 367px !important;
+        margin-left: 40px !important;
+    }
+    .owl-carousel .owl-next,
+    .owl-carousel .owl-prev {
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50px !important;
+        font-size: 30px !important;
+        margin-left: -15px !important;
+        margin-right: 45px;
+    
+    }
+}
+@media only screen and (max-width:900px) {
     .owl-carousel .owl-next,
     .owl-carousel .owl-prev {
         width: 40px !important;
@@ -296,13 +306,5 @@ body {
     
     }
     
-.our-work .img-work {
-    width: 400px;
-    height: 290px;
-   }
-   .our-work .img-work img {
-    width: 300px;
-    height: 200px;
-    padding: auto;
-   }
+    
 }
